@@ -6,16 +6,24 @@
     <title>Color Flikker</title>
   </head>
   <style>
- 
-    h3 {
+    h1 {
       text-align: center;
     }
     button {
+      /* display: flex; */
+      flex-direction:column;
       padding: 10px 20px;
       margin: 10px;
       border-radius: 45px;
+      justify-content: center;
+      align-content: center;
       font-size: 16px;
       cursor: pointer;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     #Green {
       background-color: white;
@@ -36,16 +44,18 @@
       background-color: black;
       color: white;
       border: none;
+      justify-content: end;
     }
-
   </style>
 
   <body>
-    <h3>Color Flipper</h3>
-    <button id="Green" onclick="setcolor('green')">Green</button>
-    <button id="Red"onclick="setcolor('red')">Red</button>
-    <button id="Blue"onclick="setcolor('blue')">Blue</button>
-    <button id="Random"onclick="random()">Random</button>
+    <h1>Color Flipper</h1>
+    <div class="button-container">
+      <button id="Green" onclick="setcolor('green')">Green</button>
+      <button id="Red" onclick="setcolor('red')">Red</button>
+      <button id="Blue" onclick="setcolor('blue')">Blue</button>
+      <button id="Random" onclick="random()">Random</button>
+    </div>
   </body>
   <script>
     const body=document.getElementsByTagName("body")[0].style;
