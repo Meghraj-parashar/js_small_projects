@@ -18,19 +18,19 @@
       cursor: pointer;
     }
     #Green {
-      background-color: green;
-      color: white;
-      border: none;
+      background-color: white;
+      color: green;
+      /* border: none; */
     }
     #Red {
-      background-color: red;
-      color: white;
-      border: none;
+      background-color: white;
+      color: red;
+      /* border: none; */
     }
     #Blue {
-      background-color: blue;
-      color: white;
-      border: none;
+      background-color: white;
+      color: blue;
+      /* border: none; */
     }
     #Random {
       background-color: black;
@@ -42,9 +42,25 @@
 
   <body>
     <h3>Color Flipper</h3>
-    <button id="Green">Green</button>
-    <button id="Red">Red</button>
-    <button id="Blue">Blue</button>
-    <button id="Random">Random</button>
+    <button id="Green" onclick="setcolor('green')">Green</button>
+    <button id="Red"onclick="setcolor('red')">Red</button>
+    <button id="Blue"onclick="setcolor('blue')">Blue</button>
+    <button id="Random"onclick="random()">Random</button>
   </body>
+  <script>
+    const body=document.getElementsByTagName("body")[0].style;
+    // let bcolor=body.backgroundColor="red";
+    function setcolor(name){
+      body.backgroundColor=name;
+    }
+    function  random(){
+      const red=Math.round(Math.random()*255)
+      const green=Math.round(Math.random()*255)
+      const blue=Math.round(Math.random()*255)
+      const color=`rgb(${red},${green},${blue})`
+      body.backgroundColor=color
+    }
+    
+    // setcolor("green");
+  </script>
 </html>
